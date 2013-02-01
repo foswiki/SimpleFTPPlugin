@@ -1,0 +1,43 @@
+%META:TOPICPARENT{name="Plugins"}%
+<!--
+One line description, required for extensions repository catalog.
+   * Set SHORTDESCRIPTION = Simple plugin to allow FTP upload of the contents of a particular Foswiki topic page.
+-->
+---+!! Simple FTP Plugin
+
+%SHORTDESCRIPTION%
+
+This plugin provides a simple way of automating FTP-based uploading of topic content to a server. It provides an alternative to [[http://foswiki.org/Extensions/PublishPlugin][PublishPlugin]] where the full power / complexity of the latter is not required.
+
+After installation, one can add something like:
+
+<verbatim>
+<a class='foswikiPopUp' href='%SCRIPTURLPATH{"rest"}%/SimpleFTPPlugin/ftpupload?srcweb=%BASEWEB%;srctopic=%BASETOPIC%;ftpserver=ftp.example.com;ftpusername=exampleuser;ftppassword=examplepassword;dstpath=/www;dstfilename=example.html' rel='nofollow'>Upload the FTP content of this page</a>
+</verbatim>
+
+to the topic page with content one wishes to upload.
+
+The content to be uploaded needs to be delimited by <nop>%STARTFTPCONTENT% and <nop>%ENDFTPCONTENT% on separate lines.
+
+The user attempting to upload must have VIEW permission on the specified topic page.
+
+Mandatory URL parameters are =srcweb=, =srctopic=; optional parameters are =ftpserver=, =ftpusername=, =ftppassword=, =dstpath= and =dstfilename=. If any of =ftpserver=, =ftpusername=, =ftppassword= or =dstpath= are not specified, the plugin uses the relevant default value(s) specified in the =configure= settings for the plugin. If =dstfilename= is not specified, the default name of the file created on the server is 'output.html'.
+
+---++ Preferences
+
+A default server, username, password and path can be set in =configure=; example =configure= values are specified by default.
+
+---++ Installation
+%$INSTALL_INSTRUCTIONS%
+
+---++ Info
+
+|  Author: | Foswiki:Main.AlexisHazell |
+|  Copyright: | &copy; 2013, Foswiki Contributors |
+|  License: | GPL ([[http://www.gnu.org/copyleft/gpl.html][GNU General Public License]]) |
+|  Release: | %$RELEASE% |
+|  Version: | %$VERSION% |
+|  Change&nbsp;History: | <!-- versions below in reverse order -->&nbsp; |
+|  0.1.0 (01 Feb 2013): | Initial version |
+|  Home: | http://foswiki.org/Extensions/%TOPIC% |
+|  Support: | http://foswiki.org/Support/%TOPIC% |

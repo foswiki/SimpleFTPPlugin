@@ -1,0 +1,4 @@
+!noci
+data/System/SimpleFTPPlugin.txt 0644 Documentation page
+lib/Foswiki/Plugins/SimpleFTPPlugin.pm 0444 Perl module
+lib/Foswiki/Plugins/SimpleFTPPlugin/Config.spec 0444 Configuration
